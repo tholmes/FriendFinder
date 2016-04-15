@@ -1,6 +1,7 @@
 package com.holmeswareapps.friendfinder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,14 +16,6 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean checkCameraHardware(Context context) {
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,16 +27,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Context c = getApplicationContext();
-                boolean hasCamera = checkCameraHardware(c);
-                String s;
-                if (hasCamera) {
-                    s = "This device has a camera";
-                } else {
-                    s = "This device DOES NOT have a camera";
-                }
-                Snackbar.make(view, s, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent= new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
     }
