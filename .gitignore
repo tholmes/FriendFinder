@@ -36,6 +36,7 @@ captures/
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
+.idea/vcs.xml
 .DS_Store
 /build
 /captures
