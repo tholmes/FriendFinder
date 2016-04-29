@@ -23,11 +23,29 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton firstActivity = (FloatingActionButton) findViewById(R.id.firstActivity);
+        firstActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(MainActivity.this, FirstActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton secondActivity = (FloatingActionButton) findViewById(R.id.secondActivity);
+        secondActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton thirdActivity = (FloatingActionButton) findViewById(R.id.thirdActivity);
+        thirdActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(MainActivity.this, ThirdActivity.class);
                 startActivity(intent);
             }
         });
