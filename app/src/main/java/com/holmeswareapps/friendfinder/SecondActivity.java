@@ -26,8 +26,11 @@ public class SecondActivity extends Activity {
         try {
             list = camera.getCameraIdList();
             String text = "";
-            for (int i=0; i<list.length; i++)
-                text += "Camera #" + (i+1) + " = " + list[i] + ", ";
+            for (int i=0; i<list.length; i++) {
+                text += "Camera #" + (i + 1) + " = " + list[i] + "=> ";
+                //CameraCharacteristics cc = camera.getCameraCharacteristics(list[i]);
+                //text += cc.getKeys().toString();
+            }
             tv.setText(text);
         } catch (Exception ex) {
             tv.setText("Exception Caught: " + ex.getMessage());
