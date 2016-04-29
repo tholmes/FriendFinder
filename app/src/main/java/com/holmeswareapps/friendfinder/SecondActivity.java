@@ -35,6 +35,23 @@ public class SecondActivity extends Activity {
         } catch (Exception ex) {
             tv.setText("Exception Caught: " + ex.getMessage());
         }
+        /*
+        camera.openCamera("0", new CameraDevice.StateCallback() {
+            @Override
+            public void onOpened(CameraDevice camera) {
+
+            }
+
+            @Override
+            public void onDisconnected(CameraDevice camera) {
+
+            }
+
+            @Override
+            public void onError(CameraDevice camera, int error) {
+
+            }
+        }, null);*/
     }
 
     /** A safe way to get an instance of the Camera object. */
